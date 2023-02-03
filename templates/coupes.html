@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Site Champagne</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Coupes</h1>
+    <form action="{{ url_for("coupes")}}" method="post">
+        <h4>Brut(s):</h4>
+        <input type="number" id="brut" name="bnum" placeholder="Coupe(s) de Brut"><br>
+        <h4 for="rose">Rosé(s):</h4>
+        <input type="number" id="rose" name="rnum" placeholder="Coupe(s) de Rosé(s)"><br>
+        <h4 for="millesime">Millesime(s):</h4>
+        <input type="number" id="millesime" name="mnum" placeholder="Coupe(s) de Millésime(s)"><br>
+        <h4 for="prix">Prix:</h4>
+        <input type="number" step="any" id="prix" name="prix" placeholder="Prix de vente"><br>
+        <h4 for="paiement-mode">Mode de paiement:</h4>
+        <select name="paiement" id="paiement">
+            <option value="">--Choisir un mode de Paiement--</option>
+            <option value="esp">Espèces</option>
+            <option value="cb">Carte Bancaire</option>
+        </select>
+        <button type="submit">Envoyer</button>
+    <p>{{ result }}</p>
+    <a href=" {{ url_for('index') }}" ><input class="retour" type="button" value="Retour à l'acceuil"></a>
+</body>
+</html>
